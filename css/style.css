@@ -1,0 +1,132 @@
+
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+    width: 100%;
+    height: 70vh;
+    margin-top: 70px;
+  }
+  #hero h1 {
+    margin: 0 0 40px 0;
+    font-size: 130px;
+    font-weight: 700;
+    line-height: 66px;
+    color: black;
+  }
+  #hero h2 {
+    color: #484848;
+    margin-bottom: 50px;
+    margin-left: 10px;
+    font-size: 34px;
+  }
+  #hero .btn-get-started {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+    color: #4c0027;
+    text-decoration: none;
+    border: 2px solid #4c0027;
+  }
+  #hero .btn-get-started:hover {
+    background: #4c0027;
+    color: #EEEDDE;
+  }
+  #hero .animated {
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+  }
+
+  #hero img{
+    object-fit: cover;
+    height: 800px;
+    display:flex;
+    justify-content:flex-end;
+    position: relative;
+    left: 401px;
+    top:49px
+    
+  }
+  @media (min-width: 1024px) {
+    #hero {
+      background-attachment: fixed;
+    }
+  }
+  @media (max-width: 991px) {
+    #hero {
+      height: 100vh;
+    }
+    #hero .hero-img {
+      text-align: center;
+    }
+    #hero .hero-img img {
+      width: 50%;
+    }
+  }
+
+
+  .navbar {
+    padding: 10px;
+    background-color: #EEEDDE;
+  }
+
+  .navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  .navbar li a{
+    position: relative;
+    color: #4c0027;
+    font-weight: 500;
+    padding: 10px 30px ;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.2s;
+  }
+
+  .navbar li a:hover{
+    position: relative;
+    color:#EEEDDE;
+    padding: 10px 35px;
+    background-color: #4c0027;
+    transition: 0.5s;
+  }
+ 
+
+body{
+    background-color: #EEEDDE;
+}
+
+.navbutton{
+    color: #EEEDDE;
+    padding: 5px 30px 2px;
+    border-radius: 10px;
+    
+    
+}
+
+.navbutton a{
+    font-family: Poppins;
+    font-weight: 400;
+    color: #EEEDDE;
+}
+
+
+
+nav ul li{
+    font-size: large;
+    
+}
+
+.loginalert:empty{
+  display: none;
+}
