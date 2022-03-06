@@ -47,7 +47,7 @@
           <div class="card" style="border-radius: 1rem;">
             <div class="row g-0">
               <div class="col-md-6 col-lg-5 d-none d-md-block">
-                <img src="./img/signupbg.jpg" alt="login form" class="img-fluid"
+                <img src="./img/loginbg.jpg" alt="login form" class="img-fluid"
                   style="border-radius: 1rem 0 0 1rem;object-fit: cover; position:relative;top:5rem" />
               </div>
               <div class="col-md-6 col-lg-7 d-flex align-items-center">
@@ -80,7 +80,7 @@
                     </div>
 
                     <a class="small text-muted" href="#!">Forgot password?</a>
-                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="#!"
+                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="./register.php"
                         style="color: #393f81;">Register here</a></p>
                     <a href="#!" class="small text-muted">Terms of use.</a>
                     <a href="#!" class="small text-muted">Privacy policy</a>
