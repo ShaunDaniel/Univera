@@ -13,7 +13,7 @@
     rel="stylesheet">
   <link href="./css/style.css" rel="stylesheet">
   <title>Document</title>
-
+  <script src="./js/register.js"></script>
 
 </head>
 
@@ -59,6 +59,7 @@
             $emailcount = mysqli_num_rows($emailcheck);
 
             if($emailcount>0){
+              
               echo "Email already exists!";
             }
             else{
@@ -91,13 +92,13 @@
           <div class="card" style="border-radius: 1rem;">
             <div class="row g-0">
               <div class="col-md-6 col-lg-5 d-none d-md-block">
-                <img src="./img/signupbg.jpg" alt="login form" class="img-fluid"
-                  style="border-radius: 1rem 0 0 1rem;object-fit: cover; position:relative;top:5rem" />
+                <img src="./img/registerbg.jpg" alt="login form" class="img-fluid"
+                  style="border-radius: 1rem 0 0 1rem;object-fit: cover; position:relative;top:7rem" />
               </div>
               <div class="col-md-6 col-lg-7 d-flex align-items-center">
                 <div class="card-body p-4 p-lg-5 text-black">
-
-                  <form action="./register.php" method="post">
+                
+                  <form action="./register.php" method="post" onsubmit="return userCheck()">
 
                     <div class="d-flex align-items-center mb-3 pb-1">
 
@@ -107,10 +108,10 @@
                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Create your Univera account</h5>
 
 
-                    <div class="p-3 mb-3 bg-warning text-dark loginalert" style="border-radius: 10px;"
+                    <div class="p-3 mb-3 bg-danger text-white loginalert" style="border-radius: 10px;background-color: #FFBABA"
                       id="error_Message"></div>
 
-                    <div class="row">
+                    <div class="row mb-3">
                       <div class="col">
                         <input type="text" class="form-control" name="fname" required>
                         <label class="form-label" for="form2Example17">First Name</label>
@@ -121,21 +122,26 @@
                       </div>
                     </div>
                     
-                    <div class="form-outline mb-2">
+                    <div class="form-outline mb-3">
                       <input type="email" class="form-control" name="email">
                       <label class="form-label" for="form2Example17">Email Address</label>
                     </div>
 
 
-                    <div class="form-outline mb-2">
-                      <input type="text" class="form-control" name="uname">
+                    <div class="form-outline mb-4">
+                      <input type="text" class="form-control" name="uname" id="uname">
                       <label class="form-label" for="form2Example17">Username</label>
                     </div>
 
 
-                    <div class="form-outline mb-4">
+                    <div class="form-outline mb-1">
                       <input type="password" name="pwd" class="form-control form-control-lg" />
                       <label class="form-label" for="form2Example27">Password</label>
+                    </div>
+
+                    <div class="form-outline mb-2">
+                      <input type="password" name="cpwd" class="form-control form-control-lg" />
+                      <label class="form-label" for="form2Example27">Confirm Password</label>
                     </div>
 
                     <div class="pt-1 mb-4">
@@ -143,7 +149,7 @@
                     </div>
 
 
-                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Already a member? <a href="#!"
+                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Already a member? <a href="./login.php"
                         style="color: #393f81;">Log In</a></p>
                     <a href="#!" class="small text-muted">Terms of use.</a>
                     <a href="#!" class="small text-muted">Privacy policy</a>
