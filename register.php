@@ -68,7 +68,7 @@
           }
 
             else{
-              $insertquery = "INSERT INTO `user_data`(`FNAME`, `LNAME`, `USERNAME`, `EMAIL`, `PASSWORD`) VALUES ('$firstname','$lastname','$username','$email','$pass')";
+              $insertquery = "INSERT INTO `user_data`(`FNAME`, `LNAME`, `USERNAME`, `EMAIL`, `PASSWORD`,`CPASSWORD`) VALUES ('$firstname','$lastname','$username','$email','$pass','$cpass')";
               $querypass = mysqli_query($con,$insertquery);
               if($querypass){
                 ?>
@@ -140,7 +140,7 @@
 
 
                     <div class="form-outline mb-1">
-                      <input type="password" name="pwd" class="form-control form-control-lg" id="pwd/>
+                      <input type="password" name="pwd" class="form-control form-control-lg" id="pwd"/>
                       <label class="form-label" for="form2Example27">Password</label>
                     </div>
 

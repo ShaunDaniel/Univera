@@ -39,6 +39,27 @@
     </div>
   </nav>
 
+  <?php
+  include 'dbcon.php';
+          if(isset($_POST['submitdata'])){
+            $email = mysqli_real_escape_string($con,$_POST['email']);
+            $password = mysqli_real_escape_string($con,$_POST['password']);
+
+            $sql = "select id from user_data where email = '$email'";
+
+            $result = mysqli_query($con,$sql);
+           
+            $count = mysqli_num_rows($result);
+            
+            // If result matched $myusername and $mypassword, table row must be 1 row
+          
+            if($count == 1) {
+              echo("Login Success");
+            }
+            else 
+              echo("Fail");
+          }
+  ?>
 
   <section class="vh-100" style="background-color: #eeedde;">
     <div class="container py-5 h-100">
@@ -53,7 +74,7 @@
               <div class="col-md-6 col-lg-7 d-flex align-items-center">
                 <div class="card-body p-4 p-lg-5 text-black">
                   
-                  <form action="./login.php">
+                  <form action="./login.php" method="post"> 
 
                     <div class="d-flex align-items-center mb-3 pb-1">
 
@@ -66,17 +87,17 @@
                       <div class="p-3 mb-3 bg-warning text-dark loginalert" style="border-radius: 10px;" id="error_Message"></div>
                 
                     <div class="form-outline mb-4">
-                      <input type="email" id="form2Example17" class="form-control form-control-lg" />
+                      <input type="email" id="form2Example17" class="form-control form-control-lg" name="email"/>
                       <label class="form-label" for="form2Example17">Email address</label>
                     </div>
 
                     <div class="form-outline mb-4">
-                      <input type="password" id="form2Example27" class="form-control form-control-lg" />
+                      <input type="password" id="form2Example27" class="form-control form-control-lg" name="password"/>
                       <label class="form-label" for="form2Example27">Password</label>
                     </div>
 
                     <div class="pt-1 mb-4">
-                      <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
+                      <button class="btn btn-dark btn-lg btn-block" type="submit" name="submitdata">Login</button>
                     </div>
 
                     <a class="small text-muted" href="#!">Forgot password?</a>
