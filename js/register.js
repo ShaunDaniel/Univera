@@ -21,3 +21,15 @@ function userCheck() {
         }
 
 }
+<<<<<<< Updated upstream
+=======
+
+
+function loginCheck(){
+
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    if()
+    document.getElementById("error_Message").innerHTML = "Username cannot have special characters!"
+}
+>>>>>>> Stashed changes

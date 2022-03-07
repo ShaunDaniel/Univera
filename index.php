@@ -1,3 +1,9 @@
+<?php
+
+    session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +27,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark  navbar-custom navbar-default navbar-fixed-top">
         <div class="container-fluid">
-            <a href="index.html"><img src="./img/logo.png" alt="" class="img-fluid" style="padding:5px;"
+            <a href="index.php"><img src="./img/logo.png" alt="" class="img-fluid" style="padding:5px;"
                     width="70px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -31,13 +37,22 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="navmenu">
                     <li class="nav-item navbutton">
-                        <a class="active" aria-current="page" href="#">UniSearch</a>
+                        <a style="color:#4c0027;" class="active uninav" aria-current="page" href="#">UniSearch</a>
                     </li>
                     <li class="nav-item navbutton">
-                        <a class="active" href="./login.php">Login</a>
+                        <a style="color:#4c0027;" class="active uninav" href="./login.php">Login</a>
                     </li>
-
+                    <li class="nav-item dropdown navbar">
+                        <a href="#" class="navbutton uninav nav-link dropdown-toggle"  data-bs-toggle="dropdown"><?php echo $_SESSION['USERNAME'] ?> </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <a href="#" class="dropdown-item">Reports</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="./logout.php" class="dropdown-item">Logout</a>
+                        </div>
+                    </li>
                 </ul>
+
             </div>
         </div>
     </nav>

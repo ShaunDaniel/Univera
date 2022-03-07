@@ -83,7 +83,7 @@
     align-items: center;
   }
 
-  .navbar li a{
+  .uninav{
     position: relative;
     color: #4c0027;
     font-weight: 500;
@@ -93,7 +93,7 @@
     transition: 0.2s;
   }
 
-  .navbar li a:hover{
+  .uninav:hover{
     position: relative;
     color:#EEEDDE;
     padding: 10px 35px;
@@ -107,17 +107,17 @@ body{
 }
 
 .navbutton{
-    color: #EEEDDE;
+    color: #4c0027;
     padding: 5px 30px 2px;
     border-radius: 10px;
     
     
 }
 
-.navbutton a{
+.navbutton{
     font-family: Poppins;
     font-weight: 400;
-    color: #EEEDDE;
+    color: #4c0027;
 }
 
 
@@ -129,4 +129,10 @@ nav ul li{
 
 .loginalert:empty{
   display: none;
+}
+
+
+.whiteusername:hover{
+  color:white;
+  transition: 0.5s;
 }

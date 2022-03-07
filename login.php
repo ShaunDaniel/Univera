@@ -13,6 +13,7 @@
     rel="stylesheet">
   <link href="./css/style.css" rel="stylesheet">
   <title>Document</title>
+  <script src="./js/register.js"></script>
 
 
 </head>
@@ -39,7 +40,10 @@
     </div>
   </nav>
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
   <section class="vh-100" style="background-color: #eeedde;">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -53,7 +57,11 @@
               <div class="col-md-6 col-lg-7 d-flex align-items-center">
                 <div class="card-body p-4 p-lg-5 text-black">
                   
+<<<<<<< Updated upstream
                   <form action="./login.php">
+=======
+                  <form action="./login.php" method="post" onsubmit="return loginCheck()"> 
+>>>>>>> Stashed changes
 
                     <div class="d-flex align-items-center mb-3 pb-1">
 
@@ -61,9 +69,49 @@
                     </div>
 
                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+                      
+                      
+                      <?php
+                      include 'dbcon.php';
+                              if(isset($_POST['submitdata'])){
+                                $email = mysqli_real_escape_string($con,$_POST['email']);
+                                $pass = mysqli_real_escape_string($con,$_POST['password']);
 
-                    
-                      <div class="p-3 mb-3 bg-warning text-dark loginalert" style="border-radius: 10px;" id="error_Message"></div>
+                                $sql = "select * from user_data where email = '$email'";
+
+                                $result = mysqli_query($con,$sql);
+                              
+                                $count = mysqli_num_rows($result);
+                                
+                                // If result matched $myusername and $mypassword, table row must be 1 row
+                              
+                                if($count == 1) {
+                                  
+                                  $email_pass = mysqli_fetch_assoc($result);
+
+                                  $user_pass = $email_pass["PASSWORD"];
+
+                                  $_SESSION['USERNAME'] = $email_pass['USERNAME'];
+                                  $pass_decode = password_verify($pass,$user_pass);
+
+                                  if($pass_decode){
+                                      ?>
+                                        <script>
+                                          location.replace("index.php");
+                                        </script>
+                                      <?php
+                                  }
+                                  else{
+                                    echo "<div class='p-3 mb-3 bg-danger text-light loginalert' style='border-radius: 10px;' id='error_Message'>Incorrect password.</div>" ;
+                                  }
+
+                                }
+                                else 
+                                echo "<div class='p-3 mb-3 bg-danger text-light loginalert' style='border-radius: 10px;' id='error_Message'>Unregistered email address, <a style='color:white;' href='./register.php'>Register here.</a></div>" ;
+                              }
+                      ?>
+
+                      
                 
                     <div class="form-outline mb-4">
                       <input type="email" id="form2Example17" class="form-control form-control-lg" />
@@ -76,7 +124,11 @@
                     </div>
 
                     <div class="pt-1 mb-4">
+<<<<<<< Updated upstream
                       <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
+=======
+                      <button class="btn btn-dark btn-lg btn-block" type="submit" name="submitdata" >Login</button>
+>>>>>>> Stashed changes
                     </div>
 
                     <a class="small text-muted" href="#!">Forgot password?</a>
