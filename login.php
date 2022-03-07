@@ -40,10 +40,6 @@
     </div>
   </nav>
 
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
   <section class="vh-100" style="background-color: #eeedde;">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -57,11 +53,7 @@
               <div class="col-md-6 col-lg-7 d-flex align-items-center">
                 <div class="card-body p-4 p-lg-5 text-black">
                   
-<<<<<<< Updated upstream
-                  <form action="./login.php">
-=======
                   <form action="./login.php" method="post" onsubmit="return loginCheck()"> 
->>>>>>> Stashed changes
 
                     <div class="d-flex align-items-center mb-3 pb-1">
 
@@ -114,21 +106,17 @@
                       
                 
                     <div class="form-outline mb-4">
-                      <input type="email" id="form2Example17" class="form-control form-control-lg" />
+                      <input type="email" id="form2Example17" class="form-control form-control-lg" name="email"/>
                       <label class="form-label" for="form2Example17">Email address</label>
                     </div>
 
                     <div class="form-outline mb-4">
-                      <input type="password" id="form2Example27" class="form-control form-control-lg" />
+                      <input type="password" id="form2Example27" class="form-control form-control-lg" name="password"/>
                       <label class="form-label" for="form2Example27">Password</label>
                     </div>
 
                     <div class="pt-1 mb-4">
-<<<<<<< Updated upstream
-                      <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
-=======
                       <button class="btn btn-dark btn-lg btn-block" type="submit" name="submitdata" >Login</button>
->>>>>>> Stashed changes
                     </div>
 
                     <a class="small text-muted" href="#!">Forgot password?</a>
